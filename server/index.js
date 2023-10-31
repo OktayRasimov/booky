@@ -4,7 +4,7 @@ import { PORT, url } from "./config.js";
 import booksRoute from "../server/routes/booksRoute.js";
 
 const app = express();
-// app.use(express.json());
+app.use(express.json());
 
 app.get("/", (req, res) => {
   console.log(req);
