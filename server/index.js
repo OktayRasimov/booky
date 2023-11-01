@@ -1,9 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import booksRoute from "../server/routes/booksRoute.js";
+import cors from "cors";
 
 import { PORT, url } from "./config.js";
-import cors from "cors";
 
 const app = express();
 app.use(express.json());
@@ -13,8 +13,8 @@ app.get("/", (req, res) => {
   return res.status(201).send(`welcomr`);
 });
 
-app.use("/books", booksRoute);
 app.use(cors());
+app.use("/books", booksRoute);
 
 mongoose
   .connect(url)

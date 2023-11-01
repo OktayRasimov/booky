@@ -4,7 +4,13 @@ const GlobalStyle = createGlobalStyle`
 :root {
 
   //white
-  --color-white-100:#F2F7FF;
+  --color-white-100:#f6f4f7;
+  --color-white-200:#bfbfbf;
+  --color-border-100:#ededed;
+  --color-white-300:#DBE2E0;
+  --color-blue-100:#f5f8ff;
+  --color-blue-200:#112D4E;
+  
 }
 
 
