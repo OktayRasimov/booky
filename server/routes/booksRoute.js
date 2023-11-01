@@ -34,4 +34,49 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const book = await Book.findByIdAndDelete(id);
+    if (!book) {
+      return res.status(404).send({ message: "No book found" });
+    }
+    return res.status(200).send({ message: "Book deleted succesfully" });
+  } catch (err) {
+    res
+      .status(500)
+      .send({ message: `Something went wrong with deleting book` });
+  }
+});
+
+router.put("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const book = await Book.findByIdAndUpdate(id, req.body);
+    if (!book) {
+      return res.status(404).send({ message: "No book found" });
+    }
+
+    return res.status(200).send(book);
+  } catch (err) {
+    res.status(500).send({ message: `Something went wrong with editing book` });
+  }
+});
+
+router.get("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const book = await Book.findById(id);
+    if (!book) {
+      return res.status(404).send({ message: "No book found" });
+    }
+    return res.status(200).send(book);
+  } catch (err) {
+    res
+      .status(500)
+      .send({ message: `Something went wrong with selecting book` });
+  }
+});
+
 export default router;
