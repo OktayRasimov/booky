@@ -8,6 +8,7 @@ const StyledEachBookLi = styled.li`
   justify-content: space-between;
   padding: 0rem 6rem;
   height: 7rem;
+  background-color: var(--color-white-100);
   border-bottom: 1px solid var(--color-border-100);
   &:nth-child(4) {
     /* align-items: center; */
@@ -17,7 +18,9 @@ const StyledEachBookLi = styled.li`
   }
   div {
     display: flex;
+    justify-content: space-between;
     gap: 3rem;
+    padding-left: 1rem;
     aside {
       font-size: 3rem;
       a:nth-child(1) {
@@ -46,7 +49,7 @@ function EachRenderedBook({ el, i }) {
       <div>
         <p>{el.rating}</p>
         <aside>
-          <Link>
+          <Link to={`details/${el._id}`}>
             <HiInformationCircle />
           </Link>
           <Link>

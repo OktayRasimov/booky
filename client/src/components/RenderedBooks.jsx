@@ -17,6 +17,9 @@ const RenderedMovieContainer = styled.div`
   border-radius: 10px;
   border: 1px solid var(--color-white-300);
   margin: 6rem;
+  /* &:ul {
+    background-color: var(--color-white-100);
+  } */
 `;
 
 function RenderedBooks() {
