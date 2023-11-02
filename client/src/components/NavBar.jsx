@@ -42,12 +42,12 @@ const StyledNavBar = styled.div`
           transform: translateX(5px);
         }
         &:hover {
-          transform: translateX(5px);
+          transform: translateX(15px);
           background-color: var(--color-blue-100);
         }
         &.active {
           background-color: var(--color-blue-100);
-          transform: translateX(5px);
+          transform: translateX(15px);
         }
         &.active p {
           color: var(--color-blue-200);
