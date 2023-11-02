@@ -4,12 +4,13 @@ const GlobalStyle = createGlobalStyle`
 :root {
 
   //white
-  --color-white-100:#f6f4f7;
+  --color-white-100:#fff;
   --color-white-200:#bfbfbf;
-  --color-border-100:#ededed;
   --color-white-300:#DBE2E0;
+  --color-grey-100:#525252;
+  --color-border-100:#ededed;
   --color-blue-100:#f5f8ff;
-  --color-blue-200:#112D4E;
+  --color-blue-200:#250dff;
   
 }
 
@@ -20,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Kalam', cursive;
+  font-family: 'Roboto Mono', monospace;
 }
 
 
