@@ -18,9 +18,9 @@ const StyledNavBar = styled.div`
   ul {
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 2.4rem;
     li {
-      font-size: 2rem;
+      font-size: 2.4rem;
       display: flex;
       align-items: start;
 
