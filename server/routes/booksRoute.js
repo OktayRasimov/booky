@@ -14,9 +14,9 @@ router.get("/", async (req, res) => {
 });
 router.post("/", async (req, res) => {
   try {
-    if ((!req.body.title, !req.body.author, !req.body.rating)) {
+    if ((!req.body.title, !req.body.author, !req.body.completed)) {
       return res.status(404).send({
-        message: "All required elements must be filled title,author,rating",
+        message: "All required elements must be filled title,author,completed",
       });
     }
 
@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
       title: req.body.title,
       author: req.body.author,
       description: req.body.description,
-      rating: req.body.rating,
+      completed: req.body.completed,
     };
     const book = await Book.create(newBook);
 

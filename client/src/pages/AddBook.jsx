@@ -19,7 +19,7 @@ function AddBook() {
   const title = useRef();
   const author = useRef();
   const description = useRef();
-  const rating = useRef();
+  const completed = useRef();
 
   const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ function AddBook() {
         title: title.current.value,
         author: author.current.value,
         description: description.current.value,
-        rating: Number(rating.current.value),
+        completed: completed.current.value,
       })
       .then((res) => {
         console.log(res);
@@ -50,18 +50,10 @@ function AddBook() {
         <input ref={author} placeholder="Author..." />
         <p>Description</p>
         <input ref={description} placeholder="Description..." />
-        <p>Rating</p>
-        <select ref={rating} placeholder="Rating...">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">5</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
+        <p>Completed</p>
+        <select ref={completed} placeholder="Completed...">
+          <option value="true">true</option>
+          <option value="false">false</option>
         </select>
       </section>
       <button onClick={handleAddBook}>ADD</button>

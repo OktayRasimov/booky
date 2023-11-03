@@ -13,11 +13,9 @@ const bookSchema = mongoose.Schema({
     type: String,
   },
 
-  rating: {
-    type: Number,
+  completed: {
+    type: Boolean,
     required: true,
-    min: 1,
-    max: 10,
   },
 });
 

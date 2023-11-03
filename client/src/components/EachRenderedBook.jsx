@@ -47,7 +47,7 @@ function EachRenderedBook({ el, i }) {
       <p>{el.author}</p>
       <p>{el.description}</p>
       <div>
-        <p>{el.rating}</p>
+        <p style={{ paddingTop: "1rem" }}>{String(el.completed)}</p>
         <aside>
           <Link to={`details/${el._id}`}>
             <HiInformationCircle />

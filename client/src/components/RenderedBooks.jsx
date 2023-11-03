@@ -49,7 +49,7 @@ function RenderedBooks() {
           <li>TITLE</li>
           <li>AUTHOR</li>
           <li>DESCRIPTION</li>
-          <li>RATING</li>
+          <li>Completed</li>
         </StyledRenderedBoxUlTitles>
       </main>
 
