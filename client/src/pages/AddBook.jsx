@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledAddBookContainer = styled.div`
@@ -19,6 +20,9 @@ function AddBook() {
   const author = useRef();
   const description = useRef();
   const rating = useRef();
+
+  const navigate = useNavigate();
+
   function handleAddBook() {
     axios
       .post("http://localhost:8888/books", {
@@ -32,7 +36,8 @@ function AddBook() {
       })
       .catch((err) => {
         console.log(err.message);
-      });
+      })
+      .finally(navigate(-1));
   }
 
   return (

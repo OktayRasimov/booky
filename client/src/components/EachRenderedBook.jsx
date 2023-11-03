@@ -55,7 +55,7 @@ function EachRenderedBook({ el, i }) {
           <Link>
             <HiPencil />
           </Link>
-          <Link>
+          <Link to={`delete/${el._id}`}>
             <HiXCircle />
           </Link>
         </aside>
