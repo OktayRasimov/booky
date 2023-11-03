@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const StyledEachBookLi = styled.li`
   display: grid;
-  grid-template-columns: 0rem 30rem 25rem 28rem 24rem;
+  grid-template-columns: 10rem 30rem 25rem 28rem 24rem;
   justify-content: space-between;
   padding: 0rem 6rem;
   height: 7rem;

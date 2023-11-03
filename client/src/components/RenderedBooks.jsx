@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const StyledRenderedBoxUlTitles = styled.ul`
   display: grid;
-  grid-template-columns: 0rem 30rem 25rem 28rem 24rem;
+  grid-template-columns: 10rem 30rem 25rem 28rem 24rem;
   justify-content: space-between;
   list-style: none;
 

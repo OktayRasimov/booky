@@ -19,6 +19,9 @@ const FlexBoxMain = styled.div`
   }
   div:nth-child(3) {
     background-color: var(--color-blue-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
