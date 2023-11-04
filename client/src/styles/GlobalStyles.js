@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Quicksand', sans-serif;
 }
 
 
