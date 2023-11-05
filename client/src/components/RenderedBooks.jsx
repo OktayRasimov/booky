@@ -16,7 +16,7 @@ const StyledRenderedBoxUlTitles = styled.ul`
 const RenderedMovieContainer = styled.div`
   border-radius: 10px;
   border: 1px solid var(--color-white-300);
-  margin: 6rem;
+  /* margin: 1rem; */
   /* &:ul {
     background-color: var(--color-white-100);
   } */
@@ -58,6 +58,7 @@ function RenderedBooks() {
           <EachRenderedBook i={i} el={el} key={el._id} />
         ))}
       </ul>
+      <footer>{books.length}</footer>
     </RenderedMovieContainer>
   );
 }

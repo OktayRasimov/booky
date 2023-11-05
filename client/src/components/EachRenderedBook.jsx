@@ -19,8 +19,9 @@ const StyledEachBookLi = styled.li`
   div {
     display: flex;
     justify-content: space-between;
-    gap: 3rem;
+    align-items: center;
     padding-left: 1rem;
+
     aside {
       font-size: 3rem;
       a:nth-child(1) {
@@ -39,7 +40,19 @@ const StyledEachBookLi = styled.li`
   }
 `;
 
+const CompletedStyled = styled.p`
+  background-color: ${(props) => (props.completed ? "#15ff00" : "red")};
+  color: var(--color-white-100);
+  font-size: 2.4rem;
+  padding: 0.4rem 2rem;
+  border-radius: 8px;
+`;
+
 function EachRenderedBook({ el, i }) {
+  const capitalTrue =
+    String(el.completed).charAt(0).toUpperCase() +
+    String(el.completed).slice(1);
+  console.log(capitalTrue);
   return (
     <StyledEachBookLi>
       <p>{i + 1}</p>
@@ -47,7 +60,9 @@ function EachRenderedBook({ el, i }) {
       <p>{el.author}</p>
       <p>{el.description}</p>
       <div>
-        <p style={{ paddingTop: "1rem" }}>{String(el.completed)}</p>
+        <CompletedStyled completed={el.completed}>
+          {capitalTrue}
+        </CompletedStyled>
         <aside>
           <Link to={`details/${el._id}`}>
             <HiInformationCircle />
