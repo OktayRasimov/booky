@@ -41,7 +41,7 @@ router.delete("/:id", async (req, res) => {
     if (!book) {
       return res.status(404).send({ message: "No book found" });
     }
-    return res.status(200).send({ message: "Book deleted succesfully" });
+    return res.status(200).send({ message: "Book deleted succesfully", book });
   } catch (err) {
     res
       .status(500)
