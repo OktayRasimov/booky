@@ -52,8 +52,8 @@ function AddBook() {
         <input ref={description} placeholder="Description..." />
         <p>Completed</p>
         <select ref={completed} placeholder="Completed...">
-          <option value="true">true</option>
           <option value="false">false</option>
+          <option value="true">true</option>
         </select>
       </section>
       <button onClick={handleAddBook}>ADD</button>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import EachRenderedBook from "./EachRenderedBook";
 import styled from "styled-components";
+import LoadingSpinner from "./LoadingSpinner";
 
 const StyledRenderedBoxUlTitles = styled.ul`
   display: grid;
@@ -52,12 +53,15 @@ function RenderedBooks() {
           <li>Completed</li>
         </StyledRenderedBoxUlTitles>
       </main>
-
-      <ul>
-        {books.map((el, i) => (
-          <EachRenderedBook i={i} el={el} key={el._id} />
-        ))}
-      </ul>
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <ul>
+          {books.map((el, i) => (
+            <EachRenderedBook i={i} el={el} key={el._id} />
+          ))}
+        </ul>
+      )}
       <footer>{books.length}</footer>
     </RenderedMovieContainer>
   );

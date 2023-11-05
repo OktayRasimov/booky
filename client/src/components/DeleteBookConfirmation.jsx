@@ -2,6 +2,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { HiOutlineXCircle } from "react-icons/hi";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import LoadingSpinner from "./LoadingSpinner";
 
 const StyledCancelContainer = styled.div`
   background-color: var(--color-white-100);
@@ -49,6 +51,26 @@ const CloseButton = styled.p`
 function DeleteBookConfirmation() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [selectedBook, setSelectedBook] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(
+    function () {
+      setLoading(true);
+      axios
+        .get(`http://localhost:8888/books/${id}`)
+        .then((res) => {
+          setSelectedBook(res.data);
+        })
+        .catch((err) => {
+          console.log(`something went wrong :${err.message}`);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    },
+    [id]
+  );
 
   function handleDeleteBook() {
     axios
@@ -64,17 +86,23 @@ function DeleteBookConfirmation() {
 
   return (
     <StyledCancelContainer>
-      <HiOutlineXCircle />
-      <h1>Are you sure?</h1>
-      <p>
-        Do you really want to delete these records? This process cannot be
-        undone.
-      </p>
-      <aside>
-        <button onClick={() => navigate(-1)}>Cancel</button>
-        <button onClick={handleDeleteBook}>Delete</button>
-      </aside>
-      <CloseButton onClick={() => navigate(-1)}>x</CloseButton>
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <>
+          <HiOutlineXCircle />
+          <h1>Are you sure?</h1>
+          <p>
+            Do you really want to delete this book :{selectedBook.title}? This
+            process cannot be undone.
+          </p>
+          <aside>
+            <button onClick={() => navigate(-1)}>Cancel</button>
+            <button onClick={handleDeleteBook}>Delete</button>
+          </aside>
+          <CloseButton onClick={() => navigate(-1)}>x</CloseButton>
+        </>
+      )}
     </StyledCancelContainer>
   );
 }

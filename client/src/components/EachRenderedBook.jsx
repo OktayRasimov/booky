@@ -41,7 +41,7 @@ const StyledEachBookLi = styled.li`
 `;
 
 const CompletedStyled = styled.p`
-  background-color: ${(props) => (props.completed ? "#15ff00" : "red")};
+  background-color: ${(props) => (props.$completed ? "#15ff00" : "red")};
   color: var(--color-white-100);
   font-size: 2.4rem;
   padding: 0.4rem 2rem;
@@ -60,7 +60,7 @@ function EachRenderedBook({ el, i }) {
       <p>{el.author}</p>
       <p>{el.description}</p>
       <div>
-        <CompletedStyled completed={el.completed}>
+        <CompletedStyled $completed={el.completed}>
           {capitalTrue}
         </CompletedStyled>
         <aside>
