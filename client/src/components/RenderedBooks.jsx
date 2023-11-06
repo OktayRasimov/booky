@@ -4,6 +4,7 @@ import EachRenderedBook from "./EachRenderedBook";
 import styled from "styled-components";
 import LoadingSpinner from "./LoadingSpinner";
 import { useSearchParams } from "react-router-dom";
+import { HiChevronDoubleLeft, HiChevronDoubleRight } from "react-icons/hi";
 
 const StyledRenderedBoxUlTitles = styled.ul`
   display: grid;
@@ -49,6 +50,7 @@ function RenderedBooks() {
   );
 
   const itemParams = searchParams.get("items");
+  console.log(String(Number(itemParams) + 10));
 
   return (
     <RenderedMovieContainer>
@@ -64,21 +66,38 @@ function RenderedBooks() {
         <LoadingSpinner />
       ) : (
         <ul>
-          {books.slice(itemParams, itemParams + 10).map((el, i) => {
-            return (
-              <EachRenderedBook
-                i={i + Number(itemParams)}
-                el={el}
-                key={el._id}
-              />
-            );
-          })}
+          {books
+            .slice(itemParams, String(Number(itemParams) + 10))
+            .map((el, i) => {
+              return (
+                <EachRenderedBook
+                  i={i + Number(itemParams)}
+                  el={el}
+                  key={el._id}
+                />
+              );
+            })}
         </ul>
       )}
       <PaginationContainer>
         {/* <footer>{books.length}</footer> */}
-        <p onClick={() => setSearchParams({ items: 10 })}>LESS</p>
-        <p>MORE</p>
+
+        <HiChevronDoubleLeft
+          onClick={() =>
+            setSearchParams((prev) => {
+              prev.set("items", Number(searchParams.get("items")) - 10);
+              return prev;
+            })
+          }
+        />
+        <HiChevronDoubleRight
+          onClick={() =>
+            setSearchParams((prev) => {
+              prev.set("items", Number(searchParams.get("items")) + 10);
+              return prev;
+            })
+          }
+        />
       </PaginationContainer>
     </RenderedMovieContainer>
   );
