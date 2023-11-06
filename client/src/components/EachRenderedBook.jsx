@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { HiInformationCircle, HiPencil, HiXCircle } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { firstLetterCapital } from "../utils/firstLetterCapital";
 
 const StyledEachBookLi = styled.li`
   display: grid;
@@ -49,10 +50,8 @@ const CompletedStyled = styled.p`
 `;
 
 function EachRenderedBook({ el, i }) {
-  const capitalTrue =
-    String(el.completed).charAt(0).toUpperCase() +
-    String(el.completed).slice(1);
-  console.log(capitalTrue);
+  const capitalTrue = firstLetterCapital(el.completed);
+
   return (
     <StyledEachBookLi>
       <p>{i + 1}</p>

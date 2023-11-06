@@ -4,7 +4,7 @@ import bookLogo from "../images/bookLogo.png";
 const StyledLogoImg = styled.img`
   height: auto;
   width: 18rem;
-  margin-top: 6rem;
+  margin-top: 2rem;
   background-color: inherit;
 `;
 
@@ -13,13 +13,14 @@ const StyledLogoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2.6rem;
 `;
 
 function LogoComponent() {
   return (
     <StyledLogoContainer>
       <StyledLogoImg src={bookLogo} />
-      <h5>Booky</h5>
+      <h3>Booky</h3>
     </StyledLogoContainer>
   );
 }
