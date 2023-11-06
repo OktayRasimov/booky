@@ -22,6 +22,7 @@ const FlexBoxMain = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
   }
 `;
 
