@@ -85,6 +85,7 @@ function RenderedBooks() {
         <HiChevronDoubleLeft
           onClick={() =>
             setSearchParams((prev) => {
+              if (itemParams == 0) return prev;
               prev.set("items", Number(searchParams.get("items")) - 10);
               return prev;
             })
@@ -93,8 +94,10 @@ function RenderedBooks() {
         <HiChevronDoubleRight
           onClick={() =>
             setSearchParams((prev) => {
-              prev.set("items", Number(searchParams.get("items")) + 10);
-              return prev;
+              if (books.length >= Number(itemParams) + 10) {
+                prev.set("items", Number(searchParams.get("items")) + 10);
+                return prev;
+              }
             })
           }
         />
