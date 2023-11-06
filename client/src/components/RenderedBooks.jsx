@@ -15,7 +15,7 @@ const StyledRenderedBoxUlTitles = styled.ul`
   padding: 1rem 5rem;
 `;
 
-const RenderedMovieContainer = styled.div`
+const RenderedBooksContainer = styled.div`
   border-radius: 10px;
   border: 1px solid var(--color-white-300);
   /* margin: 1rem; */
@@ -31,29 +31,26 @@ function RenderedBooks() {
   const [loading, setLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams({ items: 0 });
 
-  useEffect(
-    function () {
-      setLoading(true);
-      axios
-        .get("http://localhost:8888/books")
-        .then((res) => {
-          setBooks(res.data.data);
-        })
-        .catch((err) => {
-          console.log(console.log(err.message));
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    },
-    [setSearchParams]
-  );
+  useEffect(function () {
+    setLoading(true);
+    axios
+      .get("http://localhost:8888/books")
+      .then((res) => {
+        setBooks(res.data.data);
+      })
+      .catch((err) => {
+        console.log(console.log(err.message));
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
   const itemParams = searchParams.get("items");
   console.log(String(Number(itemParams) + 10));
 
   return (
-    <RenderedMovieContainer>
+    <RenderedBooksContainer>
       <StyledRenderedBoxUlTitles>
         <li>NUM</li>
         <li>TITLE</li>
@@ -102,7 +99,7 @@ function RenderedBooks() {
           }
         />
       </PaginationContainer>
-    </RenderedMovieContainer>
+    </RenderedBooksContainer>
   );
 }
 
