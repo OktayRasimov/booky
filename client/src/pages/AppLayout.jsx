@@ -10,20 +10,18 @@ const FlexBoxMain = styled.div`
   grid-template-columns: 30rem 1fr;
   grid-template-rows: auto 1fr;
 
-  div:nth-child(1) {
-    grid-row: 1/-1;
-  }
-  div:nth-child(2) {
+  /* div:nth-child(2) {
     background-color: green;
     height: 70px;
-  }
-  div:nth-child(3) {
-    background-color: var(--color-blue-100);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
+  } */
+`;
+
+const OutletContainer = styled.div`
+  background-color: var(--color-blue-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 `;
 
 function AppLayout() {
@@ -31,9 +29,9 @@ function AppLayout() {
     <FlexBoxMain>
       <NavBar />
       <div>2</div>
-      <div>
+      <OutletContainer>
         <Outlet />
-      </div>
+      </OutletContainer>
     </FlexBoxMain>
   );
 }

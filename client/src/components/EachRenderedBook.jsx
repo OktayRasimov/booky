@@ -52,9 +52,19 @@ const CompletedStyled = styled.p`
 function EachRenderedBook({ el, i }) {
   const capitalTrue = firstLetterCapital(el.completed);
 
+  function numberId(el) {
+    if (el <= 9) {
+      return `00${el}`;
+    }
+    if (el >= 10 && el <= 99) {
+      return `0${el}`;
+    }
+    return el;
+  }
+
   return (
     <StyledEachBookLi>
-      <p>{i + 1}</p>
+      <p>{numberId(i + 1)}</p>
       <p>{el.title}</p>
       <p>{el.author}</p>
       <p>{el.description}</p>

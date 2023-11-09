@@ -10,6 +10,7 @@ import LogoComponent from "./LogoComponent";
 
 const StyledNavBar = styled.div`
   display: flex;
+  grid-row: 1/-1;
   flex-direction: column;
   background-color: var(--color-white-100);
   gap: 5rem;

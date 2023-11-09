@@ -4,7 +4,8 @@ import EachRenderedBook from "./EachRenderedBook";
 import styled from "styled-components";
 import LoadingSpinner from "./LoadingSpinner";
 import { useSearchParams } from "react-router-dom";
-import { HiChevronDoubleLeft, HiChevronDoubleRight } from "react-icons/hi";
+
+import Pagination from "./Pagination";
 
 const StyledRenderedBoxUlTitles = styled.ul`
   display: grid;
@@ -23,8 +24,6 @@ const RenderedBooksContainer = styled.div`
     background-color: var(--color-white-100);
   } */
 `;
-
-const PaginationContainer = styled.div``;
 
 function RenderedBooks() {
   const [books, setBooks] = useState([]);
@@ -47,7 +46,6 @@ function RenderedBooks() {
   }, []);
 
   const itemParams = searchParams.get("items");
-  console.log(String(Number(itemParams) + 10));
 
   return (
     <RenderedBooksContainer>
@@ -76,29 +74,12 @@ function RenderedBooks() {
             })}
         </ul>
       )}
-      <PaginationContainer>
-        {/* <footer>{books.length}</footer> */}
-
-        <HiChevronDoubleLeft
-          onClick={() =>
-            setSearchParams((prev) => {
-              if (itemParams == 0) return prev;
-              prev.set("items", Number(searchParams.get("items")) - 10);
-              return prev;
-            })
-          }
-        />
-        <HiChevronDoubleRight
-          onClick={() =>
-            setSearchParams((prev) => {
-              if (books.length >= Number(itemParams) + 10) {
-                prev.set("items", Number(searchParams.get("items")) + 10);
-                return prev;
-              }
-            })
-          }
-        />
-      </PaginationContainer>
+      <Pagination
+        books={books}
+        itemParams={itemParams}
+        searchParams={searchParams}
+        setSearchParams={setSearchParams}
+      />
     </RenderedBooksContainer>
   );
 }
