@@ -12,7 +12,7 @@ const StyledCancelContainer = styled.div`
   align-items: center;
   padding: 2rem 4rem;
   width: 38rem;
-  gap: 3rem;
+  gap: 1.4rem;
   position: relative;
   border-radius: 5px;
 
@@ -46,6 +46,10 @@ const CloseButton = styled.p`
   top: 0;
   right: 8px;
   cursor: pointer;
+`;
+
+const DeleteIcon = styled.p`
+  font-size: 8.8rem;
 `;
 
 function DeleteBookConfirmation() {
@@ -90,7 +94,9 @@ function DeleteBookConfirmation() {
         <LoadingSpinner />
       ) : (
         <>
-          <HiOutlineXCircle />
+          <DeleteIcon>
+            <HiOutlineXCircle style={{ color: "red" }} />
+          </DeleteIcon>
           <h1>Are you sure?</h1>
           <p>
             Do you really want to delete this book :{selectedBook.title}? This
