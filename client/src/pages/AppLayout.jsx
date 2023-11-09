@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import NavBar from "../components/NavBar";
 import { Outlet } from "react-router-dom";
+import ProfileComponent from "../components/ProfileComponent";
 
 const FlexBoxMain = styled.div`
   min-height: 100vh;
@@ -28,7 +29,7 @@ function AppLayout() {
   return (
     <FlexBoxMain>
       <NavBar />
-      <div>2</div>
+      <ProfileComponent />
       <OutletContainer>
         <Outlet />
       </OutletContainer>
