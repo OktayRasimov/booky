@@ -30,20 +30,28 @@ function RenderedBooks() {
   const [loading, setLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams({ items: 0 });
 
-  useEffect(function () {
-    setLoading(true);
-    axios
-      .get("http://localhost:8888/books")
-      .then((res) => {
-        setBooks(res.data.data);
-      })
-      .catch((err) => {
-        console.log(console.log(err.message));
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+  useEffect(
+    function () {
+      setLoading(true);
+      axios
+        .get("http://localhost:8888/books")
+        .then((res) => {
+          setBooks(res.data.data);
+        })
+        .catch((err) => {
+          console.log(console.log(err.message));
+        })
+        .finally(() => {
+          setLoading(false);
+          if (!searchParams.get("items")) {
+            setSearchParams((prev) => {
+              prev.set("items", 0);
+            });
+          }
+        });
+    },
+    [searchParams, setSearchParams]
+  );
 
   const itemParams = searchParams.get("items");
 
