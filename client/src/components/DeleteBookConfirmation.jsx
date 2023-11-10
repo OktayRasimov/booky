@@ -19,6 +19,10 @@ const StyledCancelContainer = styled.div`
   p {
     text-align: center;
     color: grey;
+    span {
+      font-weight: 900;
+      color: black;
+    }
   }
   aside {
     display: flex;
@@ -99,8 +103,8 @@ function DeleteBookConfirmation() {
           </DeleteIcon>
           <h1>Are you sure?</h1>
           <p>
-            Do you really want to delete this book :{selectedBook.title}? This
-            process cannot be undone.
+            Do you really want to delete this book{" "}
+            <span>:{selectedBook.title}</span>? This process cannot be undone.
           </p>
           <aside>
             <button onClick={() => navigate(-1)}>Cancel</button>
