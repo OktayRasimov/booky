@@ -67,7 +67,9 @@ function EachRenderedBook({ el, i }) {
       <p>{numberId(i + 1)}</p>
       <p>{el.title}</p>
       <p>{el.author}</p>
-      <p>{el.description}</p>
+      <p>{`${
+        !el.description ? "No Descrtiption Provided" : el.description
+      }`}</p>
       <div>
         <CompletedStyled $completed={el.completed}>
           {capitalTrue}
