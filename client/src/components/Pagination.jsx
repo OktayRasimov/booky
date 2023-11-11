@@ -12,9 +12,9 @@ const PaginationContainer = styled.div`
     align-items: center;
     gap: 0.4rem;
     cursor: pointer;
-    transition: all 0.6s;
     border-radius: 5px;
     padding: 0 0.6rem;
+    transition: all 0.6s;
     &:hover {
       background-color: var(--color-blue-200);
       color: var(--color-white-100);

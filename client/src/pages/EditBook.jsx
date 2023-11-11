@@ -3,6 +3,32 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import LoadingSpinner from "../components/LoadingSpinner";
+import styled from "styled-components";
+
+const EditBookContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--color-white-100);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  width: 50rem;
+  aside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+      border-radius: 5px;
+      padding: 0 0.6rem;
+      transition: all 0.6s;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--color-blue-200);
+        color: var(--color-white-100);
+      }
+    }
+  }
+`;
 
 function EditBook() {
   const { id } = useParams();
@@ -58,17 +84,21 @@ function EditBook() {
   }
 
   return (
-    <div>
+    <EditBookContainer>
       {loading ? (
         <LoadingSpinner />
       ) : (
         <>
+          <h3>Title</h3>
           <input value={title} onChange={(e) => setTitle(e.target.value)} />
+          <h3>Author</h3>
           <input value={author} onChange={(e) => setAuthor(e.target.value)} />
+          <h3>Description</h3>
           <input
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
+          <h3>Completed</h3>
           <select
             value={completed}
             placeholder="Completed..."
@@ -80,9 +110,11 @@ function EditBook() {
           {/* <input value={completed} onChange={(e) => setCompleted(e.target.value)} /> */}
         </>
       )}
-      <h3 onClick={handleEdit}>edit</h3>
-      <BackButton />
-    </div>
+      <aside>
+        <BackButton />
+        <h3 onClick={handleEdit}>Edit</h3>
+      </aside>
+    </EditBookContainer>
   );
 }
 
