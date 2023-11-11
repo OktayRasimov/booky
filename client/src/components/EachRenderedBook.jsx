@@ -76,7 +76,7 @@ function EachRenderedBook({ el, i }) {
           <Link to={`details/${el._id}`}>
             <HiInformationCircle />
           </Link>
-          <Link>
+          <Link to={`edit/${el._id}`}>
             <HiPencil />
           </Link>
           <Link to={`delete/${el._id}`}>

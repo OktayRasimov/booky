@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import { firstLetterCapital } from "../utils/firstLetterCapital";
 import LoadingSpinner from "../components/LoadingSpinner";
