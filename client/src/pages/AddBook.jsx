@@ -12,7 +12,7 @@ const StyledAddBookContainer = styled.form`
   display: flex;
   flex-direction: column;
   width: 50rem;
-  transform: translateY(-20%);
+  /* transform: translateY(-20%); */
   section {
     p {
       font-size: 2.4rem;
@@ -29,6 +29,18 @@ const StyledAddBookContainer = styled.form`
     margin-top: 2rem;
     display: flex;
     justify-content: space-between;
+    button {
+      background-color: var(--color-blue-100);
+      border: none;
+      padding: 0.8rem 3rem;
+      border-radius: 10px;
+      font-weight: 900;
+      transition: all 0.6s;
+      &:hover {
+        background-color: var(--color-blue-200);
+        color: var(--color-white-100);
+      }
+    }
   }
 `;
 

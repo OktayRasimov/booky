@@ -6,12 +6,19 @@ import styled from "styled-components";
 const PaginationContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 1rem 1rem;
   aside {
     display: flex;
     align-items: center;
     gap: 0.4rem;
     cursor: pointer;
+    transition: all 0.6s;
+    border-radius: 5px;
+    padding: 0 0.6rem;
+    &:hover {
+      background-color: var(--color-blue-200);
+      color: var(--color-white-100);
+    }
   }
   div {
     display: flex;

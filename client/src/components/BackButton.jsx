@@ -21,7 +21,7 @@ function BackButton() {
       }}
     >
       <HiChevronDoubleLeft />
-      <p>Previous</p>
+      <h3>Previous</h3>
     </StyledBackButton>
   );
 }
