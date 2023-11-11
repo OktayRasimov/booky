@@ -27,13 +27,6 @@ const PaginationContainer = styled.div`
 `;
 
 function Pagination({ books, itemParams, searchParams, setSearchParams }) {
-  useEffect(
-    function () {
-      console.log(books);
-    },
-    [books]
-  );
-
   const numFinished = books?.filter((el) => el.completed === true);
   const numUnfinished = books?.filter((el) => el.completed === false);
 

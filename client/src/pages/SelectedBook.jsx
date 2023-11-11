@@ -9,7 +9,6 @@ function SelectedBook() {
   const { id } = useParams();
   const [selectedBook, setSelectedBook] = useState();
   const [loading, setLoading] = useState(false);
-  const test = useRef(false);
 
   useEffect(
     function () {
