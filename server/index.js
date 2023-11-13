@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import booksRoute from "../server/routes/booksRoute.js";
 import cors from "cors";
 
-import { PORT, url } from "./config.js";
+import { PORT, uri } from "./config.js";
 
 const app = express();
 app.use(express.json());
@@ -17,7 +17,7 @@ app.use(cors());
 app.use("/books", booksRoute);
 
 mongoose
-  .connect(url)
+  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log(`App connected to database`);
     app.listen(PORT, () => {
@@ -25,7 +25,5 @@ mongoose
     });
   })
   .catch((err) => {
-    res
-      .status(500)
-      .send({ message: "Something went wrong with connecting to database" });
+    console.error("Error connecting to the database:", err);
   });
