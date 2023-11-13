@@ -1,3 +1,3 @@
-export const PORT = 8888;
-export const url = "mongodb://127.0.0.1:27017/book-store-api";
-export const herokuUrl = "https://booky-mern-36cb894449f3.herokuapp.com/";
+export const PORT = process.env.PORT || 8888;
+export const url =
+  "mongodb+srv://oktayrasimov:AL63EmLeLux7Gbsf@cluster0.hnkolwk.mongodb.net/book-store-api?retryWrites=true&w=majority";
