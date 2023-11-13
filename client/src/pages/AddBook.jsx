@@ -31,6 +31,7 @@ const StyledAddBookContainer = styled.form`
     justify-content: space-between;
     button {
       background-color: var(--color-blue-100);
+      content: "Add";
       border: none;
       padding: 0.8rem 3rem;
       border-radius: 10px;
