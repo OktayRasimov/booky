@@ -55,7 +55,7 @@ function AddBook() {
 
   function handleAddBook() {
     axios
-      .post("http://localhost:8888/books", {
+      .post("booky-mern-api.vercel.app/books", {
         title: title.current.value,
         author: author.current.value,
         description: description.current.value,

@@ -45,7 +45,7 @@ function EditBook() {
     function () {
       setLoading(true);
       axios
-        .get(`http://localhost:8888/books/${id}`)
+        .get(`booky-mern-api.vercel.app/books/${id}`)
         .then((res) => {
           setTitle(res.data.title);
           setAuthor(res.data.author);
@@ -71,7 +71,7 @@ function EditBook() {
     };
 
     axios
-      .put(`http://localhost:8888/books/${id}`, data)
+      .put(`booky-mern-api.vercel.app/books/${id}`, data)
       .then((res) => {
         console.log(res);
       })

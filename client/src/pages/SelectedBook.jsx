@@ -14,7 +14,7 @@ function SelectedBook() {
     function () {
       setLoading(true);
       axios
-        .get(`http://localhost:8888/books/${id}`)
+        .get(`booky-mern-api.vercel.app/books/${id}`)
         .then((res) => {
           setSelectedBook(res.data);
         })
