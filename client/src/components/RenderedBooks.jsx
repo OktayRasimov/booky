@@ -34,7 +34,7 @@ function RenderedBooks() {
     function () {
       setLoading(true);
       axios
-        .get("http://localhost:8888/books")
+        .get("https://booky-mern-36cb894449f3.herokuapp.com/books")
         .then((res) => {
           setBooks(res.data.data);
         })
