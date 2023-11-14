@@ -14,7 +14,7 @@ function SelectedBook() {
     function () {
       setLoading(true);
       axios
-        .get(`booky-mern-api.vercel.app/books/${id}`)
+        .get(`https://booky-mern-36cb894449f3.herokuapp.com/books/${id}`)
         .then((res) => {
           setSelectedBook(res.data);
         })
