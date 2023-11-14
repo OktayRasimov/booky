@@ -26,6 +26,12 @@ Back End:
 - MongoDB
 - Mongoose
 
+Hosting Services:
+
+- Client-side-Vercel
+
+- Server-side-Heroku
+
 <h2>👩‍💻 Features:</h2>
 
 - Fully Responsive/Mobile Responsive ready
@@ -43,7 +49,7 @@ git clone https://github.com/OktayRasimov/booky
 <p>3. Then in git navige to the cloned file</p>
 
 ```
-cd booky
+cd booky/client
 ```
 
 <p>4. Open the file in the CodeEditor you are using</p>
