@@ -16,20 +16,6 @@ app.get("/", (req, res) => {
 app.use(cors());
 app.use("/books", booksRoute);
 
-// const client = new MongoClient(uri);
-// async function run() {
-//   try {
-//     await client.connect();
-//     console.log("Successfully connected to Atlas");
-//   } catch (err) {
-//     console.log(err.stack);
-//   } finally {
-//     await client.close();
-//   }
-// }
-// run().catch(console.dir);
-
-//    ORIGINAL
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
