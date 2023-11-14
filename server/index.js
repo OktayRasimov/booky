@@ -31,7 +31,7 @@ app.use("/books", booksRoute);
 
 //    ORIGINAL
 mongoose
-  .connect(uri)
+  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log(`App connected to database`);
     app.listen(PORT, () => {
