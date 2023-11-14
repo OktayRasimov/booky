@@ -34,7 +34,7 @@ function RenderedBooks() {
     function () {
       setLoading(true);
       axios
-        .get("booky-mern-api.vercel.app/books")
+        .get("http://localhost:8888/books")
         .then((res) => {
           setBooks(res.data.data);
         })
