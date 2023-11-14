@@ -66,7 +66,7 @@ function DeleteBookConfirmation() {
     function () {
       setLoading(true);
       axios
-        .get(`booky-mern-api.vercel.app/${id}`)
+        .get(`https://booky-mern-36cb894449f3.herokuapp.com/books/${id}`)
         .then((res) => {
           setSelectedBook(res.data);
         })
@@ -82,7 +82,7 @@ function DeleteBookConfirmation() {
 
   function handleDeleteBook() {
     axios
-      .delete(`booky-mern-api.vercel.app/${id}`)
+      .delete(`https://booky-mern-36cb894449f3.herokuapp.com/books/${id}`)
       .then((res) => {
         console.log(res);
       })

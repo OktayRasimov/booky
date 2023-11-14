@@ -71,7 +71,7 @@ function EditBook() {
     };
 
     axios
-      .put(`https://booky-mern-36cb894449f3.herokuapp.com/${id}`, data)
+      .put(`https://booky-mern-36cb894449f3.herokuapp.com/books/${id}`, data)
       .then((res) => {
         console.log(res);
       })
