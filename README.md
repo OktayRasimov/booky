@@ -3,11 +3,12 @@
 <p id="description">Booky: Your go-to book companion for tracking your reading journey. Easily log and manage your finished and ongoing books. Stay organized and discover your next great read with Booky.</p>
 
 <h2>🚀 Demo</h2>
-<h3>Soon...</h3>
+
+[https://booky-henna.vercel.app/](https://booky-henna.vercel.app/)
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://github.com/OktayRasimov/booky/blob/client/src/images/MainPage.png/?raw=true" alt="project-screenshot">
+<img src="https://github.com/OktayRasimov/booky/blob/main/client/src/images/MainPage.png/?raw=true" alt="project-screenshot">
 
 <h2>💻 Built with</h2>
 

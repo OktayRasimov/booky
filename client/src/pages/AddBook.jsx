@@ -53,7 +53,8 @@ function AddBook() {
 
   const navigate = useNavigate();
 
-  function handleAddBook() {
+  function handleAddBook(e) {
+    e.preventDefault();
     axios
       .post("https://booky-mern-36cb894449f3.herokuapp.com/books", {
         title: title.current.value,
