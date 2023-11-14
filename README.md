@@ -28,13 +28,20 @@ Back End:
 
 Hosting Services:
 
-- Client-side-Vercel
+- Client-side : Vercel
 
-- Server-side-Heroku
+- Server-side : Heroku
 
 <h2>👩‍💻 Features:</h2>
 
 - Fully Responsive/Mobile Responsive ready
+
+<h2>Future features to come</h2>
+
+- Settings tab
+- User Authenication
+- Filter and search for books
+- Account tab
 
 <h2>🛠️ Installation Steps:</h2>
 
