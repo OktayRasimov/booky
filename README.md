@@ -1,3 +1,6 @@
+<h1 align='center'>⛔ NO LONGER SUPPORTED ⛔</h1>
+<p align='left'>Heroku is no longer free so i had to terminater the server</p>
+
 <h1 align="center" id="title">Booky-MERN FullStack</h1>
 
 <p id="description">Booky: Your go-to book companion for tracking your reading journey. Easily log and manage your finished and ongoing books. Stay organized and discover your next great read with Booky.</p>
